@@ -1,0 +1,20 @@
+<h1>Welcome to the info of your favoirte restaurant: <%= @restaurant.name%></h1>
+
+
+<ul>
+   <li>address: <%= @restaurant.address %></li>
+   <li>phone number: <%= @restaurant.phone_number %></li>
+   <li>category: <%= @restaurant.category %></li>
+</ul>
+
+<ul>
+  <%@restaurant.reviews.each do |review| %>
+  <li>review: <%= review.content%></li>
+  <li>rating: <%= review.rating%></li>
+  <%end %>
+
+
+</ul>
+<%=link_to "Back", restaurants_path %>
+<%=link_to "Edit", edit_restaurant_path(@restaurant) %>
+<%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>

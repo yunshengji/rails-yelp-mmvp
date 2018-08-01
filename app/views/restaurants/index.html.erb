@@ -1,0 +1,15 @@
+<h1>Welcome to the Yelp MVP</h1>
+<br>
+<% @restaurants.each do |restaurant| %>
+<br>
+<br>
+ <p> <%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+ <%= link_to "编辑", edit_restaurant_path(restaurant) %>
+ <%= link_to "删除", restaurant_path(restaurant),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<br>
+
+
+<% end %>
+
